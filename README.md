@@ -1,27 +1,48 @@
 # Templates
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+Proyecto de ejemplo de inclusion de PrimeNg.
 
-## Development server
+## Instalcion y configuracion de PrimeNg
+1- Instalar primeng
+npm install primeng --save
+2- Instalar font-awesome
+npm install font-awesome --save
+3- Agrego los estilos en el .angular-cli.json
+  "../node_modules/font-awesome/css/font-awesome.min.css",
+  "../node_modules/primeng/resources/themes/omega/theme.css",
+  "../node_modules/primeng/resources/primeng.min.css"
+4- Importo las animaciones(en app.modules.ts) que son necesarias para ciertos componentes primeng.
+import {BrowserAnimationsModule} from  @angular/platform-browser/animations';
+5- Agrego el modulo al array improts
+imports: [
+    BrowserModule,
+    CheckboxModule
+  ]
+## Utilizacion de componenetes PrimeNg
+Los pasos siguientes aplican para la mayoria de los componentes PrimeNg
+1- Importo el componente en el modulo principal
+https://www.primefaces.org/primeng/#/spinner
+import { SpinnerModule } from 'primeng/spinner';
+2- Agrego el modulo en el array de dependencias
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    SpinnerModule
+  ]
+3- Agrego el componente de PrimeNg en mi componente
+<p-spinner size="30"></p-spinner>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Creacion de un modulo exclusivo para importacion de PrimeNg
+A veces es conveniente para mantener la claridad del codigo separar la aplicacion en varios modulos. En este caso podemos tener un modulo exclusivo para las importaciones de PrimeNg
+1- Creo un modulo
+ng g module modulos/imports
+2- Quito todas las importaciones de PrimeNg del modulo principal
+3- Agrego todas los modulos de PrimeNg en los array imports y exports del modulo creado ImportsModule.
+imports: [
+    SpinnerModule,
+    CalendarModule
+  ]
+exports: [
+    SpinnerModule,
+    CalendarModule
+  ]
