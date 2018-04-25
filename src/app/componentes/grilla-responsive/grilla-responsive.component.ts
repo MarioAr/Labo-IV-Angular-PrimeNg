@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grilla-responsive.component.css']
 })
 export class GrillaResponsiveComponent implements OnInit {
-
+  date
   constructor() { }
 
   ngOnInit() {
