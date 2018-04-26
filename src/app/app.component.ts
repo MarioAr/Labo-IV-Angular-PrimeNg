@@ -21,6 +21,17 @@ export class AppComponent implements OnInit {
         }
       },
       {
+        label: 'PrimeNG',
+        items: [
+            {
+              label: 'Modulo',
+              command: e => {
+                this.router.navigateByUrl('/primeng/modulos');
+              }
+            }
+        ]
+      },
+      {
         label: 'Componentes',
         items: [{
                 label: 'Grillas',
@@ -42,7 +53,7 @@ export class AppComponent implements OnInit {
               }
             }
         ]
-    },
+      },
       {
           label: 'File',
           items: [{

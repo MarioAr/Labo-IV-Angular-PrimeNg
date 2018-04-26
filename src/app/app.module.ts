@@ -13,10 +13,16 @@ import { TablaComponent } from './componentes/tabla/tabla.component';
 import { GrillaComponent } from './componentes/grilla/grilla.component';
 import { GrillaResponsiveComponent } from './componentes/grilla-responsive/grilla-responsive.component';
 import { CompComponent } from './componentes/comp/comp.component';
+import { StepsComponent } from './componentes/steps/steps.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },  
+  { path: 'home', component: HomeComponent },
+  { path: 'primeng',      component: CompComponent,
+    children: [
+      { path: 'modulos', component: StepsComponent }
+    ]
+  },
   { path: 'componentes',      component: CompComponent,
     children: [
       { path: 'tabla', component: TablaComponent },
@@ -35,7 +41,8 @@ const appRoutes: Routes = [
     TablaComponent,
     GrillaComponent,
     GrillaResponsiveComponent,
-    CompComponent
+    CompComponent,
+    StepsComponent
   ],
   imports: [
     BrowserModule,

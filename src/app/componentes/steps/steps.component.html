@@ -1,0 +1,49 @@
+<div class="ui-g">
+    <div class="ui-g-12 ui-md-12">
+        <br>
+        <p-steps [model]="items" [(activeIndex)]="activeIndex"
+            styleClass="steps-custom" [readonly]="false"></p-steps>
+    </div>
+
+
+    
+    <div class="ui-g-8">
+        <p-progressBar [value]="valor"></p-progressBar>
+    </div>
+    <div class="ui-g-4">
+    </div>
+
+    <div class="ui-g-12 ui-md-12">
+        
+        <code *ngIf="activeIndex==0" class="code">
+                
+            Instalar PrimeNg y font-awesome: <br><br>
+                
+            npm install primeng font-awesome --save
+        </code>
+        <code *ngIf="activeIndex==1" >
+            Agregar los estilos en el archivo .angular-cli.json: <br><br>
+            styles: [ <br>
+                "../node_modules/font-awesome/css/font-awesome.min.css", <br>
+                "../node_modules/primeng/resources/themes/omega/theme.css", <br>
+                "../node_modules/primeng/resources/primeng.min.css" <br>
+                ]
+            
+        </code>
+        <code *ngIf="activeIndex==2" class="code" ngNonBindable>
+            
+                Importar las animaciones(en app.modules.ts) que son necesarias para ciertos componentes primeng: <br> <br>
+            
+            import {{ BrowserAnimationsModule }} from  @angular/platform-browser/animations';
+        </code>
+        <code *ngIf="activeIndex==3" class="code">
+            
+            Agregar el modulo al array imports: <br> <br>
+            
+                imports: [ <br>
+                    BrowserModule,<br>
+                    BrowserAnimationsModule <br>
+                  ]
+        </code>
+    </div>
+</div>  

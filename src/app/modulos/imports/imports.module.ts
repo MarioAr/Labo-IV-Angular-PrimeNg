@@ -9,17 +9,20 @@ import { TableModule } from 'primeng/table';
 import { SliderModule} from 'primeng/slider';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
-
-let modulos = [
+import { StepsModule } from 'primeng/steps';
+import { ProgressBarModule } from 'primeng/progressbar';
+const modulos = [
   SpinnerModule,
-    CalendarModule,
-    MenubarModule,
-    CarouselModule,
-    TableModule,
-    SliderModule,
-    DropdownModule,
-    MultiSelectModule
-]
+  CalendarModule,
+  MenubarModule,
+  CarouselModule,
+  TableModule,
+  SliderModule,
+  DropdownModule,
+  MultiSelectModule,
+  StepsModule,
+  ProgressBarModule
+];
 @NgModule({
   imports: modulos,
   exports: modulos,
